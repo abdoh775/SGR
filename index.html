@@ -1,11 +1,1694 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=./%D9%85%D8%AD%D8%A7%D9%81%D8%B8.html">
-  <title>الدفع الإلكتروني</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#3477d4">
+<title>الدفع إلى صقر الجزيرة - شارع نواكشط — صلة</title>
+
+<style>
+:root {
+  --primary: #00B8B0;
+  --primary-hover: #009d96;
+  --primary-glow: rgba(0, 184, 176, 0.35);
+  --primary-soft: rgba(0, 184, 176, 0.12);
+  --navy: #0D1B3D;
+  --navy-soft: #1E293B;
+  --muted: #64748B;
+  --border-glass: rgba(255, 255, 255, 0.85);
+  --border-subtle: rgba(14, 165, 233, 0.16);
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-hover: rgba(255, 255, 255, 0.90);
+  --card-shadow: 0 16px 36px -10px rgba(13, 27, 61, 0.08), 0 2px 6px rgba(13, 27, 61, 0.04);
+  --card-shadow-hover: 0 24px 50px -12px rgba(0, 184, 176, 0.22), 0 3px 8px rgba(13, 27, 61, 0.06);
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; }
+html { min-height: 100%; background: #3477d4; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Cairo", sans-serif;
+  color: var(--navy);
+  background: #3477d4;
+  position: relative;
+}
+
+body::before {
+  display: none;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+header {
+  position: relative;
+  text-align: center;
+  padding: 6px 16px 12px;
+  border-radius: 28px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--card-shadow), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.store-badge {
+  position: relative;
+  width: min(250px, 78vw);
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.store-badge img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: -25%;
+  margin-bottom: -24%;
+  object-fit: contain;
+  background: transparent;
+  border-radius: 0;
+  filter: drop-shadow(0 6px 18px rgba(13, 27, 61, 0.16));
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 850;
+  line-height: 1.35;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin-top: 0;
+}
+
+.store-subtitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.store-subtitle .live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+  display: inline-block;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* تصميم بطاقات خطوات الدفع الفاخرة بنمط الزجاج السائل */
+.payment-flow {
+  position: relative;
+  border-radius: 24px;
+  padding: 13px 12px 14px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.85) 0%, rgba(240, 249, 252, 0.65) 100%);
+  backdrop-filter: blur(20px) saturate(190%);
+  -webkit-backdrop-filter: blur(20px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 
+    0 16px 36px -12px rgba(13, 27, 61, 0.07),
+    0 3px 8px rgba(13, 27, 61, 0.03),
+    inset 0 1px 2px rgba(255, 255, 255, 1);
+  overflow: hidden;
+}
+
+.payment-flow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(0, 184, 176, 0.5), transparent);
+  pointer-events: none;
+}
+
+.flow-track {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 20px minmax(0, 1fr) 20px minmax(0, 1fr);
+  align-items: stretch;
+  gap: 5px;
+  direction: rtl;
+}
+
+.flow-step {
+  position: relative;
+  min-height: 82px;
+  padding: 10px 6px 9px;
+  border-radius: 17px;
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.65) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7px;
+  text-align: center;
+  box-shadow: 
+    0 4px 14px -3px rgba(13, 27, 61, 0.03),
+    inset 0 1px 1px rgba(255, 255, 255, 0.95);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flow-step:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(170deg, #ffffff 0%, rgba(234, 251, 250, 0.85) 100%);
+  border-color: rgba(0, 184, 176, 0.35);
+  box-shadow: 0 10px 22px -6px rgba(0, 184, 176, 0.18), inset 0 1px 1px #fff;
+}
+
+.flow-icon-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flow-num-badge {
+  position: absolute;
+  top: -4px;
+  right: -5px;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #00B8B0, #087f79);
+  color: #ffffff;
+  font-size: 9.5px;
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 6px rgba(0, 184, 176, 0.38);
+  border: 1.5px solid #ffffff;
+  z-index: 2;
+  transition: all 0.22s ease;
+}
+
+.flow-icon-bubble {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(0, 184, 176, 0.12), rgba(2, 132, 199, 0.08));
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(0, 184, 176, 0.2);
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.flow-step:hover .flow-icon-bubble {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #00B8B0, #088b85);
+  color: #ffffff;
+  border-color: #00B8B0;
+  box-shadow: 0 5px 14px rgba(0, 184, 176, 0.32);
+}
+
+.flow-step:hover .flow-num-badge {
+  background: var(--navy);
+}
+
+.flow-text {
+  font-size: 11px;
+  line-height: 1.35;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  opacity: 0.85;
+}
+
+.flow-connector {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 184, 176, 0.25);
+  display: grid;
+  place-items: center;
+  color: var(--primary);
+  box-shadow: 0 2px 6px rgba(13, 27, 61, 0.04);
+}
+
+.wallet-profile-trigger {
+  width: 100%;
+  border: 1px solid var(--border-glass);
+  background: linear-gradient(135deg, rgba(234, 251, 250, 0.85), rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 18px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: right;
+  color: var(--navy);
+  cursor: pointer;
+  box-shadow: var(--card-shadow), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+  font: inherit;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wallet-profile-trigger:hover {
+  background: linear-gradient(135deg, rgba(234, 251, 250, 0.95), rgba(255, 255, 255, 0.85));
+  transform: translateY(-1px);
+}
+
+.wallet-profile-trigger:active {
+  transform: scale(0.99);
+}
+
+.wallet-profile-trigger-copy {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.wallet-profile-trigger-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  background: rgba(0, 184, 176, 0.12);
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  flex: 0 0 34px;
+}
+
+.wallet-profile-trigger-texts {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.wallet-profile-trigger-texts strong {
+  font-size: 13.5px;
+  color: var(--navy);
+  font-weight: 800;
+}
+
+.wallet-profile-trigger-texts small {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.wallet-profile-trigger-action {
+  flex: 0 0 auto;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--primary);
+  font-size: 11.5px;
+  font-weight: 850;
+  border: 1px solid rgba(0, 184, 176, 0.25);
+  box-shadow: 0 2px 6px rgba(0, 184, 176, 0.08);
+}
+
+.wallet-discovery {
+  display: grid;
+  gap: 10px;
+}
+
+.wallets {
+  display: grid;
+  gap: 10px;
+}
+
+.wallet {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  border-radius: 22px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: right;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--card-shadow), inset 0 1px 1px rgba(255, 255, 255, 0.85);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms ease, background 250ms ease, border-color 250ms ease;
+}
+
+/* Reflection overlay for real liquid glass sheen */
+.wallet::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.1) 40%, transparent 60%, rgba(255, 255, 255, 0.3) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wallet > * {
+  position: relative;
+  z-index: 1;
+}
+
+.wallet:hover {
+  transform: translateY(-2px) scale(1.004);
+  background: var(--glass-hover);
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--card-shadow-hover), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+}
+
+.wallet:active {
+  transform: scale(0.988) translateY(0);
+  box-shadow: 0 8px 20px rgba(13, 27, 61, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.7);
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  flex: 0 0 42px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(13, 27, 61, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.info strong {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.3;
+}
+
+.info-account-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.info b {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #334155;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 2px 7px;
+  border-radius: 7px;
+  border: 1px solid rgba(203, 213, 225, 0.5);
+}
+
+.phone-match-badge {
+  display: inline-flex;
+  width: max-content;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #EAFBFA;
+  color: #00877f;
+  border: 1px solid rgba(0, 184, 176, 0.28);
+  font-size: 10.5px;
+  font-weight: 800;
+}
+
+.phone-match-badge::before {
+  content: "✓";
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.go {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #00877f;
+  background: linear-gradient(135deg, rgba(0, 184, 176, 0.12), rgba(0, 184, 176, 0.05));
+  border: 1px solid rgba(0, 184, 176, 0.28);
+  padding: 7px 13px;
+  border-radius: 999px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 2px 8px rgba(0, 184, 176, 0.08);
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.go svg {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+  transition: transform 0.22s ease;
+}
+
+.wallet:hover .go {
+  background: linear-gradient(135deg, #00B8B0, #08968f);
+  color: #ffffff;
+  border-color: #00B8B0;
+  box-shadow: 0 6px 18px rgba(0, 184, 176, 0.35);
+  transform: translateY(-1px);
+}
+
+.wallet:hover .go svg {
+  transform: translate(-2px, -2px);
+}
+
+.wallet-two-step {
+  cursor: default;
+  flex-wrap: wrap;
+}
+
+.wallet-two-step:active {
+  transform: none;
+}
+
+.wallet-actions {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding-top: 6px;
+}
+
+.wallet-action {
+  min-height: 44px;
+  border-radius: 14px;
+  padding: 9px 12px;
+  border: 1px solid transparent;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 850;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.15s, background 0.15s;
+}
+
+.copy-action {
+  background: linear-gradient(180deg, #F8FFFE, #EAFBFA);
+  color: #00877f;
+  border-color: rgba(0, 184, 176, 0.28);
+}
+
+.copy-action.copied {
+  background: #e5f8ef;
+  color: #087345;
+  border-color: #bfe9d3;
+}
+
+.open-action, .android-copy-open-action {
+  background: linear-gradient(135deg, #00B8B0, #087f79);
+  color: #ffffff;
+  border-color: #00B8B0;
+  box-shadow: 0 6px 18px rgba(0, 184, 176, 0.25);
+}
+
+.wallet-action:active {
+  transform: scale(0.985);
+  box-shadow: none;
+}
+
+.wallet-actions.android-single-action {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.android-copy-open-action {
+  width: 100%;
+  min-height: 46px;
+}
+
+.other-wallets-toggle {
+  width: 100%;
+  border: 1px solid var(--border-glass);
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: right;
+  color: var(--navy);
+  cursor: pointer;
+  box-shadow: var(--card-shadow), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+  transition: all 0.2s ease;
+}
+
+.other-wallets-toggle:hover {
+  background: var(--glass-hover);
+}
+
+.other-wallets-copy {
+  display: grid;
+  gap: 2px;
+}
+
+.other-wallets-copy strong {
+  font-size: 13.5px;
+  font-weight: 800;
+}
+
+.other-wallets-copy small {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.other-wallets-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+}
+
+.other-wallets-meta b {
+  min-width: 26px;
+  height: 26px;
+  padding: 0 6px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 184, 176, 0.12);
+  color: #00877f;
+  font-size: 11.5px;
+  font-weight: 850;
+}
+
+.other-wallets-meta i {
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.other-wallets-toggle[aria-expanded="true"] .other-wallets-meta i {
+  transform: rotate(180deg);
+}
+
+.wallet-profile-dialog[hidden] { display: none !important; }
+.wallet-profile-open { overflow: hidden; }
+.wallet-profile-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 16px 12px max(16px, env(safe-area-inset-bottom));
+}
+
+.wallet-profile-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(13, 27, 61, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.wallet-profile-sheet {
+  position: relative;
+  width: min(100%, 500px);
+  max-height: min(84vh, 660px);
+  overflow: auto;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  padding: 20px 18px;
+  box-shadow: 0 30px 80px rgba(13, 27, 61, 0.25);
+  display: grid;
+  gap: 15px;
+  z-index: 1;
+}
+
+.wallet-profile-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.wallet-profile-head > div {
+  display: grid;
+  gap: 4px;
+}
+
+.wallet-profile-head strong {
+  font-size: 17px;
+  color: var(--navy);
+  font-weight: 850;
+}
+
+.wallet-profile-head small {
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.wallet-profile-close {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  border: 1px solid rgba(203, 213, 225, 0.6);
+  border-radius: 10px;
+  background: #f8fafc;
+  color: var(--navy);
+  font: 700 20px/1 inherit;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.wallet-profile-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.wallet-profile-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 14px;
+  background: rgba(248, 250, 252, 0.8);
+  color: var(--navy);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.wallet-profile-option:hover {
+  background: #fff;
+  border-color: rgba(0, 184, 176, 0.35);
+}
+
+.wallet-profile-option input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+  flex: 0 0 18px;
+}
+
+.wallet-profile-option span {
+  font-size: 12.5px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.wallet-profile-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  position: sticky;
+  bottom: -20px;
+  padding: 12px 0 0;
+  background: linear-gradient(transparent, #fff 24%, #fff);
+}
+
+.wallet-profile-save, .wallet-profile-clear {
+  min-height: 46px;
+  border-radius: 13px;
+  padding: 10px 14px;
+  font: 800 13px/1.4 inherit;
+  cursor: pointer;
+}
+
+.wallet-profile-save {
+  border: 1px solid var(--primary);
+  background: linear-gradient(135deg, #00B8B0, #087f79);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(0, 184, 176, 0.25);
+}
+
+.wallet-profile-clear {
+  border: 1px solid #d8e7e6;
+  background: #f8fafc;
+  color: var(--muted);
+}
+
+.notice {
+  position: fixed;
+  left: 50%;
+  bottom: max(20px, env(safe-area-inset-bottom));
+  transform: translate(-50%, 30px);
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(13, 27, 61, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 10px 20px;
+  max-width: 90vw;
+  text-align: center;
+  font-size: 12.5px;
+  font-weight: 750;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+  z-index: 100;
+  box-shadow: 0 16px 36px rgba(13, 27, 61, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.notice.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+  padding: 10px 14px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.security-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: #475569;
+  font-size: 10.5px;
+  font-weight: 750;
+}
+
+@media (max-width: 400px) {
+  main { padding-inline: 12px; }
+  .flow-track { grid-template-columns: minmax(0, 1fr) 14px minmax(0, 1fr) 14px minmax(0, 1fr); gap: 3px; }
+  .flow-step { min-height: 74px; padding: 7px 4px 6px; border-radius: 14px; gap: 5px; }
+  .flow-icon-bubble { width: 30px; height: 30px; border-radius: 10px; }
+  .flow-icon-bubble svg { width: 15px; height: 15px; }
+  .flow-connector { width: 15px; height: 15px; }
+  .flow-connector svg { width: 9px; height: 9px; }
+  .flow-text { font-size: 10px; }
+  .wallet-profile-options { grid-template-columns: 1fr; }
+  .wallet { padding: 11px 12px; }
+  .logo { width: 38px; height: 38px; flex: 0 0 38px; border-radius: 11px; }
+  .info strong { font-size: 14px; }
+  .info b { font-size: 12px; }
+  .go { padding: 6px 11px; font-size: 12px; }
+}
+</style>
 </head>
+
 <body>
-  جاري فتح صفحة الدفع...
+
+<main>
+<header>
+  <div class="store-badge">
+    <img src="https://raw.githubusercontent.com/abdoh775/SGR/aca886bf4032f5f9d965480342b838e4f30bb94b/%D8%A7%D9%84%D8%B4%D8%B9%D8%A7%D8%B1%20SGR.png" alt="صقر الجزيرة - شارع نواكشط" loading="eager" decoding="async">
+  </div>
+  <h1>صقر الجزيرة - شارع نواكشط</h1>
+  <div class="store-subtitle">
+    <span class="live-dot"></span>
+    <span>بوابة التحويل والدفع الإلكتروني المباشر</span>
+  </div>
+</header>
+
+<section class="payment-flow" aria-label="خطوات الدفع">
+  <div class="flow-track">
+    <!-- الخطوة 1: نسخ رقم المحفظة -->
+    <div class="flow-step">
+      <div class="flow-icon-wrap">
+        <span class="flow-icon-bubble">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+        </span>
+        <span class="flow-num-badge">1</span>
+      </div>
+      <span class="flow-text">انسخ رقم المحفظة</span>
+    </div>
+
+    <!-- فاصل توجيهي ميكرو-زجاجي -->
+    <div class="flow-arrow" aria-hidden="true">
+      <span class="flow-connector">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </span>
+    </div>
+
+    <!-- الخطوة 2: فتح المحفظة -->
+    <div class="flow-step">
+      <div class="flow-icon-wrap">
+        <span class="flow-icon-bubble">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+          </svg>
+        </span>
+        <span class="flow-num-badge">2</span>
+      </div>
+      <span class="flow-text">افتح المحفظة</span>
+    </div>
+
+    <!-- فاصل توجيهي ميكرو-زجاجي -->
+    <div class="flow-arrow" aria-hidden="true">
+      <span class="flow-connector">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </span>
+    </div>
+
+    <!-- الخطوة 3: لصق الرقم والدفع -->
+    <div class="flow-step">
+      <div class="flow-icon-wrap">
+        <span class="flow-icon-bubble">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </span>
+        <span class="flow-num-badge">3</span>
+      </div>
+      <span class="flow-text">الصق الرقم وادفع</span>
+    </div>
+  </div>
+</section>
+
+<section class="wallet-discovery" id="walletDiscovery">
+  <div class="wallets" id="wallets">
+    
+    <!-- حاسب -->
+    <a class="wallet"
+      href="/api/pay/l/UdprqW4_2FloTSZA.HjDbuvc367I6xq1N3iGm4g.f-GQIcVYfe2HH4CifZfTVMgtpgmrU_IYZwYmXMbhb5E8Dhi4aw7sVFQMCgZbsU1EaicB0YzJFSf3W-zQXUklSychbhng3vf2Wxhmbxek5XfMEqiyxwE3Cpth2gdlvwue6cHT9Lg"
+      data-account="990218"
+      data-name="حاسب"
+      data-key="hasib"
+      data-wallet-key="hasib"
+      data-default-order="0"
+      onclick="return openWallet(this)">
+      <span class="logo"><img src="/wallet-logos/hasib.webp" alt="حاسب" loading="lazy" decoding="async" onerror="this.onerror=null;this.parentElement.innerHTML='<span style=\'font-weight:900;color:#00877f;\'>ح</span>'"></span>
+      <span class="info">
+        <strong>حاسب</strong>
+        <span class="info-account-row"><b dir="ltr">990218</b></span>
+      </span>
+      <span class="go">
+        <span>فتح</span>
+        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+
+    <!-- جيب -->
+    <a class="wallet"
+      href="/api/pay/l/fj6lYUuPpwShDJnD.I_e1PJ7CtH4SRSsnttR-4A.dtNTLP_bFa_ZMb2GomdPntLCgODX3c8GUlI_UQeB0LvsULYekAOzP0dBwqJ6OSigi-fpvRGcDbZQuesiFoOc6IelYjOaFHBczAgOPwxPMfBcLHqFb_3IEiS4yKTdbY6_v2Hubnk"
+      data-account="562189"
+      data-name="جيب"
+      data-key="jaib"
+      data-wallet-key="jaib"
+      data-default-order="1"
+      onclick="return openWallet(this)">
+      <span class="logo"><img src="https://play-lh.googleusercontent.com/DD6sJ8x9gQZ0uu84r5xD7-yUR2Ckc8CotMJmAhTrTM5pl8NEUdZA0rqBtXUqOyzoSzWC0OfuMvyvoDRRO6EpjQ=w240-h480" alt="جيب" loading="lazy" decoding="async"></span>
+      <span class="info">
+        <strong>جيب</strong>
+        <span class="info-account-row"><b dir="ltr">562189</b></span>
+      </span>
+      <span class="go">
+        <span>فتح</span>
+        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+
+    <!-- يمن والت -->
+    <a class="wallet"
+      href="/api/pay/l/T_WOzsDjtIJE1X2G.n8vgEeBmZmuvpbAr-v7Wig.9XWnX69votPa-ZMtifWF0mawWPpWwG4eU77T9KmlaaoDJjztv4ieDHZR9wmL8AceyLpC_f_yBcoXA6BBmFB7wvVzTVqd3RxQnLj0mJgIU6kqByz0cr0y2WKHPjVT0uKE9iA_Lg"
+      data-account=""
+      data-name="يمن والت"
+      data-key="yemen_wallet"
+      data-wallet-key="yemen_wallet"
+      data-default-order="2"
+      onclick="return openWallet(this)">
+      <span class="logo"><img src="https://play-lh.googleusercontent.com/jfyCxdHbzQKp31Uam3bbHIONegwq9BEL6y4k16iAEGyquOf9GHeJKGVTWCSZs5_43upD3OJ6nloenvHv4h7J=w240-h480" alt="يمن والت" loading="lazy" decoding="async"></span>
+      <span class="info">
+        <strong>يمن والت</strong>
+        <span class="info-account-row"><small style="font-size:11.5px;color:var(--muted)">تطبيق المحفظة المباشر</small></span>
+      </span>
+      <span class="go">
+        <span>فتح</span>
+        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+
+    <!-- وان كاش -->
+    <a class="wallet"
+      href="/api/pay/l/TEMNw8LGMHA9Igyb.f-JVva7u4erpO8njNQjmWw.NEO0yb1M4-uUe1A0umqtMNLVWZKz6p04iqBFFV5mgZ-16c0cnyfldSuJEuYcSRFrfhL9yTni8Y1kKDT0Dvm0M6vqos6v8QwSXK1_ifRpeSdw9wgP7ZL3aR2h5z1huOh6N_cSPg"
+      data-account="126487"
+      data-name="وان كاش"
+      data-key="one_cash"
+      data-wallet-key="one_cash"
+      data-default-order="3"
+      onclick="return openWallet(this)">
+      <span class="logo"><img src="https://play-lh.googleusercontent.com/WqrsU_pFeqT63UuvAH8vavDeee22oJWtrp6TuVyqbWddB8EtkSToVwPUzp-arwD_3em6VnzDHF-8STWhujko1Q=w240-h480" alt="وان كاش" loading="lazy" decoding="async"></span>
+      <span class="info">
+        <strong>وان كاش</strong>
+        <span class="info-account-row"><b dir="ltr">126487</b></span>
+      </span>
+      <span class="go">
+        <span>فتح</span>
+        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+
+    <!-- جوالي -->
+    <a class="wallet"
+      href="/api/pay/l/Mu0UADoF_JBACe_I.RZa_5YnM5Mqs602IIcUg7w.VYAm2FwYVF2ZchRRIJdfR8iyJe3LQQqXJ1odqOCcIVYobpQak1BbBnwAvym4IOUsTfcDZcDRzDmK3Aycth28yynVc1ImFui4sVjPJQCFemp2oGnHh6uDaSw5S-zt2B-YxOGE-g"
+      data-account="133549"
+      data-name="جوالي"
+      data-key="jawali"
+      data-wallet-key="jawali"
+      data-default-order="4"
+      onclick="return openWallet(this)">
+      <span class="logo"><img src="https://play-lh.googleusercontent.com/cdKHQ0C8LHUZ957w5cNWEXtZzCwntobKsfM4cipF0KR9_1Tv9ys0_5oNh0RCSwjpTzosfJ5J-fQGFvBq3vH2YA=w240-h480" alt="جوالي" loading="lazy" decoding="async"></span>
+      <span class="info">
+        <strong>جوالي</strong>
+        <span class="info-account-row"><b dir="ltr">133549</b></span>
+      </span>
+      <span class="go">
+        <span>فتح</span>
+        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+
+    <!-- فلوسك -->
+    <a class="wallet"
+      href="/api/pay/l/XPSYwXDPmQTHguhT.ZZ7vPeUk8l6ToEPpcATaEw.Wu8IV3EmWIPBKb16EBACvSX2ojpXN6BnKWnB-KGq1Y52RowHfCDKQkPIR6KYvSN0qepMYaesu3kYhtOSbQm8pUXhW21C2MzF8xF4YQvfKT0_itbZQDa0uYZTd9cGHwUqS3v58w"
+      data-account="778007"
+      data-name="فلوسك"
+      data-key="floosak"
+      data-wallet-key="floosak"
+      data-default-order="5"
+      onclick="return openWallet(this)">
+      <span class="logo"><img src="https://play-lh.googleusercontent.com/zFQM3P20sCb90Z6JHrp7vHAPJAPxXNDyMzVHxABxSMTWVA6i2mCKPQJhtLf3FUlV01jkVS87iDT_wa80NUaQLw=w240-h480" alt="فلوسك" loading="lazy" decoding="async"></span>
+      <span class="info">
+        <strong>فلوسك</strong>
+        <span class="info-account-row"><b dir="ltr">778007</b></span>
+      </span>
+      <span class="go">
+        <span>فتح</span>
+        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+
+    <!-- شامل موني -->
+    <a class="wallet"
+      href="/api/pay/l/YY8Cq6pSpxyyEzJb.ghkudQeOyMK9sdrZ9Q8eYA.LDrEfHo0hDfegnm4JNbghOAjbq6S54kQ2nzZu2uvKgzV4JW5-EWq-5B6tb9vjea2fB2Vvt1XcLmdpyKRi9k6_cwzqwSJv4W24Bu_REoaprRSI4195qUvFwqYlByaiGccPTIOiA"
+      data-account=""
+      data-name="شامل موني"
+      data-key="shamil_money"
+      data-wallet-key="shamil_money"
+      data-default-order="6"
+      onclick="return openWallet(this)">
+      <span class="logo"><img src="https://play-lh.googleusercontent.com/4PSTqHTLGFRCm5PNHLK1dMO2aMkqd-RsPCsSMPm4WZlmeUm64g5Bf5NxY1QWZnIa3mBMgJacW7b0Xpoclv1ZMw=w240-h480" alt="شامل موني" loading="lazy" decoding="async"></span>
+      <span class="info">
+        <strong>شامل موني</strong>
+        <span class="info-account-row"><small style="font-size:11.5px;color:var(--muted)">تطبيق المحفظة المباشر</small></span>
+      </span>
+      <span class="go">
+        <span>فتح</span>
+        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+
+    <!-- كاش -->
+    <a class="wallet"
+      href="/api/pay/l/J8IW6iHzpaQkbdY2.v_FBk1E557vsKuZU6WRYPw.iPHFD6GPsB05KQYUhIkAAjTizFWNjLJJjzpJMf0UbShEl2B4WZ0E1rBzzz7Nzfhy--zIAEv436jdWMJqbZ97Sdfafotxp_4uufkR_4XUJ8LzSVp4Ht5_XoBHZOOkhI9YGgbAyQ"
+      data-account="144203"
+      data-name="كاش"
+      data-key="cash"
+      data-wallet-key="cash"
+      data-default-order="7"
+      onclick="return openWallet(this)">
+      <span class="logo"><img src="https://play-lh.googleusercontent.com/aSgBfaCzLPRM-C0Q-OnNpzGbfrVnfTPuQX0f7zAbYPFXqci5L5Omw1l9p0WiOjqEE-fio9FWT9P1HCvX6K73=w240-h480" alt="كاش" loading="lazy" decoding="async"></span>
+      <span class="info">
+        <strong>كاش</strong>
+        <span class="info-account-row"><b dir="ltr">144203</b></span>
+      </span>
+      <span class="go">
+        <span>فتح</span>
+        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+
+    <!-- موبايل موني -->
+    <a class="wallet"
+      href="/api/pay/l/W_8KUTx_3r_s8ld1.bAvfHtvVwdkj09sJu4kvyg.WQufK9wV550vX28wB8mDxtMHLD33xQJCOReHSCvDEa4AmXSO6mmfV7LSFc7PpkAZm9-xbip432xcYnJZJz1qePaIRUOHoG_xnblh6caBOMVtN0xTITW3qX86VNNkY3BZy5TJ6g"
+      data-account="775458585"
+      data-name="موبايل موني"
+      data-key="mobile_money"
+      data-wallet-key="mobile_money"
+      data-default-order="8"
+      onclick="return openWallet(this)">
+      <span class="logo"><img src="https://play-lh.googleusercontent.com/fnxxZ7KP15EhtTTw23pVYEMICO4O8KKjkYSG3tOF5YfZYT5MbWflqaAyJmhWoizSru9pFXIR8m9mb17fzGAKxQ=w240-h480" alt="موبايل موني" loading="lazy" decoding="async"></span>
+      <span class="info">
+        <strong>موبايل موني</strong>
+        <span class="info-account-row"><b dir="ltr">775458585</b></span>
+      </span>
+      <span class="go">
+        <span>فتح</span>
+        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+
+    <!-- بنكي -->
+    <a class="wallet"
+      href="/api/pay/l/4qB_XIsfFZyX2j29.8uE18LftXI_mX-xpowbFmQ.b6bBNplKeGZ4-CPGGCsM0jWr-WmaIAKduTRGS1WE8m5sIGmCS_7ABBbvmiM0-NeTeBstVAtTuom5YfbnliNQHmZdKYJ2Vfynkc_rhzjzmvUTT73KxM2NpL_6mTIOaGea8irJ2w"
+      data-account="611524"
+      data-name="بنكي"
+      data-key="banky"
+      data-wallet-key="banky"
+      data-default-order="9"
+      onclick="return openWallet(this)">
+      <span class="logo"><img src="https://play-lh.googleusercontent.com/-OubVAsv7N-iEDAvETZUqAN3PEtbeX_XGQNnKNpCAscoETT58oJPk-Lh_JiaFDlhENFOuZzguIE3M51lrma-cQ=w240-h480" alt="بنكي" loading="lazy" decoding="async"></span>
+      <span class="info">
+        <strong>بنكي</strong>
+        <span class="info-account-row"><b dir="ltr">611524</b></span>
+      </span>
+      <span class="go">
+        <span>فتح</span>
+        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+
+    <!-- إيزي -->
+    <a class="wallet"
+      href="/api/pay/l/eHSqVaT51rM-gbEw.Pggdelld7Z3rhzn1yoWXWw.5k13k__c6VJrR7LSu4Te6i7awEkOIfvADcq-mhiVRf4E2GpWUTAGfnaLN8stgbUY_FKkMUA_lrFyd8tnaHndZzzZQfFunt-tTp_XVT7egXLwFWbw1bKtCLvtz3TXxZZoGkuklF4"
+      data-account="5016686"
+      data-name="إيزي"
+      data-key="easy"
+      data-wallet-key="easy"
+      data-default-order="10"
+      onclick="return openWallet(this)">
+      <span class="logo"><img src="https://play-lh.googleusercontent.com/zNc2yh5uga4GBRv0AiXGgE4LHbLupRKwkULQz3tj1pDUH0CW9rHlsZbk10PYLP-Ry7mBmT-0aXMLSLPeBqQWSA=w240-h480" alt="إيزي" loading="lazy" decoding="async"></span>
+      <span class="info">
+        <strong>إيزي</strong>
+        <span class="info-account-row"><b dir="ltr">5016686</b></span>
+      </span>
+      <span class="go">
+        <span>فتح</span>
+        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <div class="security-badge">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+    <span>دفع آمن ومحمي 100% بدون أي رسوم إضافية</span>
+  </div>
+</footer>
+</main>
+
+<div id="notice" class="notice" role="status" aria-live="polite">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00B8B0" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+  <span id="notice-text"></span>
+</div>
+
+<script>
+var paymentTarget = {"qrCode": "GHpjni", "shortCode": null};
+var walletPreferenceStorageKey = 'sila:wallet-preferences:v1';
+var walletPreferenceMaxAgeMs = 365 * 24 * 60 * 60 * 1000;
+
+function sessionId() {
+  var k = 'sila:p:s';
+  try {
+    var v = sessionStorage.getItem(k);
+    if (v) return v;
+    v = (self.crypto && crypto.randomUUID) ? crypto.randomUUID() : 's' + Date.now().toString(36) + Math.random().toString(36).slice(2);
+    sessionStorage.setItem(k, v);
+    return v;
+  } catch (e) {
+    return 's' + Date.now().toString(36);
+  }
+}
+
+function track(eventName, walletKey) {
+  var p = JSON.stringify({
+    event: eventName,
+    walletKey: walletKey || null,
+    source: 'web',
+    sessionId: sessionId(),
+    qrCode: paymentTarget.qrCode,
+    shortCode: paymentTarget.shortCode
+  });
+  try {
+    if (navigator.sendBeacon) {
+      var b = new Blob([p], {type: 'application/json'});
+      if (navigator.sendBeacon('/api/pay/events', b)) return;
+    }
+  } catch (e) {}
+  try {
+    fetch('/api/pay/events', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: p,
+      keepalive: true,
+      credentials: 'same-origin'
+    }).catch(function(){});
+  } catch (e) {}
+}
+
+function normalizeWalletKey(v) {
+  return String(v || '').trim().toLowerCase().slice(0, 80);
+}
+
+function readWalletPreferences() {
+  var clean = {};
+  try {
+    var raw = localStorage.getItem(walletPreferenceStorageKey);
+    if (!raw) return clean;
+    var parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return clean;
+    var now = Date.now();
+    Object.keys(parsed).slice(0, 50).forEach(function(rawKey) {
+      var key = normalizeWalletKey(rawKey);
+      if (!key || key === '__proto__' || key === 'constructor' || key === 'prototype') return;
+      var item = parsed[rawKey];
+      if (!item || typeof item !== 'object') return;
+      var count = Math.floor(Number(item.count));
+      var lastUsed = Number(item.lastUsed);
+      if (!isFinite(count) || count < 1 || !isFinite(lastUsed) || lastUsed < 1) return;
+      if (now - lastUsed > walletPreferenceMaxAgeMs) return;
+      clean[key] = {count: Math.min(count, 10000), lastUsed: lastUsed};
+    });
+  } catch (e) {}
+  return clean;
+}
+
+function saveWalletPreferences(prefs) {
+  try { localStorage.setItem(walletPreferenceStorageKey, JSON.stringify(prefs)); } catch (e) {}
+}
+
+function rememberWalletChoice(walletKey) {
+  var key = normalizeWalletKey(walletKey);
+  if (!key) return;
+  var prefs = readWalletPreferences();
+  var current = prefs[key] || {count: 0, lastUsed: 0};
+  prefs[key] = {count: Math.min(Number(current.count || 0) + 1, 10000), lastUsed: Date.now()};
+  saveWalletPreferences(prefs);
+}
+
+function walletCards(container) {
+  var cards = [];
+  if (!container) return cards;
+  for (var i = 0; i < container.children.length; i++) {
+    var child = container.children[i];
+    if (child.classList && child.classList.contains('wallet')) cards.push(child);
+  }
+  return cards;
+}
+
+var walletInitialPopularityRank = {
+  kuraimi: 10, kuraimi_jawal: 10, hasib: 10, haseb: 10, hasib_kuraimi: 10, kuraimi_hasib: 10,
+  mfloos: 10, m_floos: 10, floosak: 20, jawali: 30, onecash: 40, one_cash: 40, jaib: 50,
+  mobilemoney: 60, mobile_money: 60, cash: 70, saba_cash: 80, sabacash: 80, yemenwallet: 90,
+  yemen_wallet: 90, bees: 100, pyes: 100, shamelmoney: 110, shamel_money: 110, mahfazati: 120,
+  mahfathati: 120, easy: 130, mutakamila: 140, mtakamila: 140
+};
+
+function walletInitialRank(key) {
+  var k = normalizeWalletKey(key);
+  return Object.prototype.hasOwnProperty.call(walletInitialPopularityRank, k) ? walletInitialPopularityRank[k] : 10000;
+}
+
+function sortWalletCards() {
+  var container = document.querySelector('.wallets');
+  var cards = walletCards(container);
+  if (cards.length < 2) return;
+  var prefs = readWalletPreferences();
+  cards.forEach(function(card, index) {
+    if (!card.dataset.defaultOrder) card.dataset.defaultOrder = String(index);
+  });
+  cards.sort(function(a, b) {
+    var ak = normalizeWalletKey(a.dataset.walletKey || a.dataset.key);
+    var bk = normalizeWalletKey(b.dataset.walletKey || b.dataset.key);
+    var ap = prefs[ak] || {count: 0, lastUsed: 0};
+    var bp = prefs[bk] || {count: 0, lastUsed: 0};
+    if (ap.count > 0 || bp.count > 0) {
+      if (bp.count !== ap.count) return bp.count - ap.count;
+      if (bp.lastUsed !== ap.lastUsed) return bp.lastUsed - ap.lastUsed;
+    }
+    var ar = walletInitialRank(ak);
+    var br = walletInitialRank(bk);
+    if (ar !== br) return ar - br;
+    return Number(a.dataset.defaultOrder || 0) - Number(b.dataset.defaultOrder || 0);
+  });
+  cards.forEach(function(card) { container.appendChild(card); });
+}
+
+(function() {
+  var storageKey = 'sila:wallet-launch-health:v1', maxAge = 180 * 24 * 60 * 60 * 1000, pending = null;
+  function norm(v) {
+    v = String(v || '').trim().toLowerCase().slice(0, 80);
+    return /^[a-z0-9_-]+$/.test(v) && v !== '__proto__' && v !== 'constructor' && v !== 'prototype' ? v : '';
+  }
+  function read() {
+    var out = Object.create(null);
+    try {
+      var raw = localStorage.getItem(storageKey);
+      if (!raw) return out;
+      var parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return out;
+      var now = Date.now();
+      Object.keys(parsed).slice(0, 50).forEach(function(rawKey) {
+        var key = norm(rawKey), item = parsed[rawKey];
+        if (!key || !item || typeof item !== 'object') return;
+        var success = Math.floor(Number(item.success)), lastSuccess = Number(item.lastSuccess);
+        if (!isFinite(success) || success < 1 || !isFinite(lastSuccess) || lastSuccess < 1 || now - lastSuccess > maxAge) return;
+        out[key] = {success: Math.min(success, 1000), lastSuccess: lastSuccess};
+      });
+    } catch (e) {}
+    return out;
+  }
+  function write(data) { try { localStorage.setItem(storageKey, JSON.stringify(data)); } catch (e) {} }
+  function confirmPending() {
+    if (!pending) return;
+    var age = Date.now() - pending.at;
+    if (age < 0 || age > 5000) { pending = null; return; }
+    var key = pending.key;
+    pending = null;
+    var data = read(), current = data[key] || {success: 0, lastSuccess: 0};
+    data[key] = {success: Math.min(Number(current.success || 0) + 1, 1000), lastSuccess: Date.now()};
+    write(data);
+  }
+  window.silaMarkWalletLaunchAttempt = function(walletKey) {
+    var key = norm(walletKey);
+    if (!key) return;
+    pending = {key: key, at: Date.now()};
+  };
+  window.silaWalletLaunchHealth = function(walletKey) {
+    var key = norm(walletKey), data = read();
+    return key && data[key] ? data[key] : {success: 0, lastSuccess: 0};
+  };
+  window.silaSortWalletCardsByLaunchHealth = function(container) {
+    if (!container || typeof walletCards !== 'function') return;
+    var cards = walletCards(container);
+    if (cards.length < 2) return;
+    var prefs = typeof readWalletPreferences === 'function' ? readWalletPreferences() : {}, health = read(), order = new Map();
+    cards.forEach(function(card, index) { order.set(card, index); });
+    cards.sort(function(a, b) {
+      var ak = norm(a.dataset.walletKey || a.dataset.key), bk = norm(b.dataset.walletKey || b.dataset.key);
+      var ap = prefs[ak] || {count: 0}, bp = prefs[bk] || {count: 0};
+      if (Number(ap.count || 0) !== Number(bp.count || 0)) return order.get(a) - order.get(b);
+      var ah = health[ak] || {success: 0, lastSuccess: 0}, bh = health[bk] || {success: 0, lastSuccess: 0};
+      if (Number(bh.success || 0) !== Number(ah.success || 0)) return Number(bh.success || 0) - Number(ah.success || 0);
+      if (Number(bh.lastSuccess || 0) !== Number(ah.lastSuccess || 0)) return Number(bh.lastSuccess || 0) - Number(ah.lastSuccess || 0);
+      return order.get(a) - order.get(b);
+    });
+    cards.forEach(function(card) { container.appendChild(card); });
+  };
+  document.addEventListener('visibilitychange', function() { if (document.hidden) confirmPending(); });
+  window.addEventListener('pagehide', confirmPending);
+})();
+
+function isAndroidSingleActionClient() {
+  try { return /Android/i.test(String(navigator.userAgent || '')); } catch (e) { return false; }
+}
+
+function silaAndroidWalletPackage(key) {
+  key = normalizeWalletKey(key);
+  var packages = {
+    jaib: 'com.ahd.jaib', one_cash: 'com.one.onecustomer', onecash: 'com.one.onecustomer',
+    jawali: 'com.ama.wecashmobileapp', wecash: 'com.ama.wecashmobileapp',
+    mtakamila: 'com.almutakamila.mpay', mutakamila: 'com.almutakamila.mpay', mpay: 'com.almutakamila.mpay',
+    floosak: 'co.ysys.floosak', mahfathati: 'com.tiib.mahfathati', mahfazati: 'com.tiib.mahfathati',
+    yemen_wallet: 'com.s2m.yemenpost.customer.android', yemenwallet: 'com.s2m.yemenpost.customer.android',
+    shamil_money: 'shamil.bank.yemen.bahrain.wallet.money', shamelmoney: 'shamil.bank.yemen.bahrain.wallet.money',
+    cash: 'com.tamkeen.sms', mobile_money: 'cac.mobilemoney.app', mobilemoney: 'cac.mobilemoney.app',
+    hasib: 'com.KuraimiBank', haseb: 'com.KuraimiBank', mfloos: 'com.KuraimiBank', kuraimi: 'com.KuraimiBank',
+    pyes: 'com.alamalbank.amb', bees: 'com.alamalbank.amb', saba_cash: 'com.yottagate.sabacash',
+    banky: 'com.bankylite.commercial', easy: 'com.easy_aio.client'
+  };
+  return packages[key] || '';
+}
+
+function silaGoogleAppWalletBridge(key) {
+  var pkg = silaAndroidWalletPackage(key);
+  return pkg ? 'intent://' + pkg + '#Intent;scheme=android-app;package=com.google.android.googlequicksearchbox;end' : '';
+}
+
+function applyAndroidSinglePaymentFlow() {
+  if (!isAndroidSingleActionClient()) return;
+  var steps = document.querySelectorAll('.payment-flow .flow-text');
+  if (steps.length >= 3) {
+    steps[0].textContent = 'اضغط نسخ وفتح';
+    steps[1].textContent = 'الصق رقم التاجر';
+    steps[2].textContent = 'أكمل الدفع';
+  }
+}
+
+function openAndroidCopyAndOpen(link) {
+  if (!isAndroidSingleActionClient()) return openOfficialWallet(link);
+  if (link.dataset.busy === '1') return false;
+  link.dataset.busy = '1';
+  var account = link.dataset.account || '', name = link.dataset.name || 'المحفظة', key = link.dataset.key || '';
+  var copied = copyForLaunch(account);
+  if (link.dataset.preferenceRecorded !== '1') {
+    rememberWalletChoice(key);
+    link.dataset.preferenceRecorded = '1';
+  }
+  track('wallet_selected', key);
+  if (copied) track('account_copied', key);
+  track('wallet_open_requested', key);
+  if (typeof silaMarkWalletLaunchAttempt === 'function') silaMarkWalletLaunchAttempt(key);
+  try { if (navigator.vibrate) navigator.vibrate(20); } catch (e) {}
+  if (copied) {
+    notice('تم نسخ رقم التاجر — جارٍ فتح ' + name);
+  } else {
+    notice('جارٍ فتح ' + name + ' — انسخ الرقم من الصفحة إذا لزم');
+  }
+  setTimeout(function() { link.dataset.busy = '0'; }, 1200);
+  return true;
+}
+
+function applyAndroidSingleWalletActions() {
+  if (!isAndroidSingleActionClient()) return;
+  applyAndroidSinglePaymentFlow();
+  var cards = document.querySelectorAll('.wallet.wallet-two-step');
+  for (var i = 0; i < cards.length; i++) {
+    var card = cards[i];
+    if (card.dataset.androidSingleAction === '1') continue;
+    var actions = card.querySelector('.wallet-actions');
+    var copy = card.querySelector('.copy-action[data-account]');
+    var open = card.querySelector('.open-action[href]');
+    if (!actions || !copy || !open) continue;
+    var key = normalizeWalletKey(open.dataset.key || card.dataset.walletKey || card.dataset.key);
+    var bridge = silaGoogleAppWalletBridge(key);
+    open.dataset.account = copy.dataset.account || '';
+    if (bridge) {
+      open.dataset.originalHref = open.getAttribute('href') || '';
+      open.setAttribute('href', bridge);
+      open.dataset.systemBridge = 'google-app-android-app';
+    }
+    open.classList.add('android-copy-open-action');
+    open.textContent = 'نسخ وفتح المحفظة';
+    open.setAttribute('aria-label', 'نسخ رقم التاجر وفتح ' + String(open.dataset.name || 'المحفظة'));
+    open.setAttribute('onclick', 'return openAndroidCopyAndOpen(this)');
+    while (actions.firstChild) actions.removeChild(actions.firstChild);
+    actions.appendChild(open);
+    actions.classList.add('android-single-action');
+    card.classList.add('wallet-android-single-step');
+    card.dataset.androidSingleAction = '1';
+  }
+}
+
+function isIOSDirectLaunchClient() {
+  try { return /iPad|iPhone|iPod|Macintosh.*Mobile/i.test(String(navigator.userAgent || '')); } catch (e) { return false; }
+}
+
+function silaIOSWalletLaunch(key) {
+  key = normalizeWalletKey(key);
+  var storeJaib = 'https://apps.apple.com/ye/app/jaib-digital-wallet/id6472856710',
+      storeOne = 'https://apps.apple.com/ye/app/one-%D9%83%D8%A7%D8%B4/id1661455867',
+      storeJawali = 'https://apps.apple.com/ye/app/%D8%AC%D9%88%D8%A7%D9%84%D9%8A/id1622872097',
+      storeMpay = 'https://apps.apple.com/ye/app/%D9%85%D8%AD%D9%81%D8%B8%D8%A9-%D8%A5%D9%85-%D8%A8%D8%A7%D9%8A/id1660391235',
+      storeFloosak = 'https://apps.apple.com/app/floosak/id1382486018',
+      storeMahfathati = 'https://apps.apple.com/ye/app/mahfathati/id1463475087',
+      storeYemen = 'https://apps.apple.com/ye/app/%D9%8A%D9%85%D9%86-%D9%88%D8%A7%D9%84%D8%AA/id6449282553',
+      storeShamil = 'https://apps.apple.com/app/shamil-money/id1583463359',
+      storeCash = 'https://apps.apple.com/ye/app/cash-e-wallet/id1607537166',
+      storeMobile = 'https://apps.apple.com/ye/app/mobile-money-cac-bank/id6751777871',
+      storeKuraimi = 'https://apps.apple.com/ye/app/kuraimi-jawal/id1279242179',
+      storePyes = 'https://apps.apple.com/ye/app/pyes-%D8%A8%D9%8A%D8%B3/id6474688858',
+      storeSaba = 'https://apps.apple.com/ye/app/sabacash/id1591917243',
+      storeBanky = 'https://apps.apple.com/ye/app/%D8%A8%D9%86%D9%83%D9%8A/id6443647632',
+      storeTejari = 'https://apps.apple.com/ye/app/tejari-cash/id6740749063',
+      storeEasy = 'https://apps.apple.com/ye/app/%D9%85%D8%AD%D9%81%D8%B8%D8%A9-%D8%A7%D9%8A%D8%B2%D9%8A/id6751516672';
+  var launches = {
+    jaib: {target: 'https://e-jaib.com/ar', store: storeJaib, kind: 'official'},
+    one_cash: {target: 'onecash://', store: storeOne, kind: 'scheme'},
+    onecash: {target: 'onecash://', store: storeOne, kind: 'scheme'},
+    jawali: {target: 'jawali://', store: storeJawali, kind: 'scheme'},
+    floosak: {target: 'floosak://', store: storeFloosak, kind: 'scheme'},
+    mahfathati: {target: 'mahfathati://', store: storeMahfathati, kind: 'scheme'},
+    yemen_wallet: {target: 'yemenwallet://', store: storeYemen, kind: 'scheme'},
+    shamil_money: {target: 'shamelmoney://', store: storeShamil, kind: 'scheme'},
+    cash: {target: 'cash://', store: storeCash, kind: 'scheme'},
+    mobile_money: {target: 'mobilemoney://', store: storeMobile, kind: 'scheme'},
+    hasib: {target: 'kuraimi://', store: storeKuraimi, kind: 'scheme'},
+    kuraimi: {target: 'kuraimi://', store: storeKuraimi, kind: 'scheme'},
+    pyes: {target: 'pyes://', store: storePyes, kind: 'scheme'},
+    saba_cash: {target: 'sabacash://', store: storeSaba, kind: 'scheme'},
+    banky: {target: storeBanky, store: storeBanky, kind: 'store'},
+    easy: {target: storeEasy, store: storeEasy, kind: 'store'}
+  };
+  return launches[key] || null;
+}
+
+var silaIOSFallbackTimer = null, silaIOSFallbackCleanup = null;
+function clearIOSDirectFallback() {
+  if (silaIOSFallbackTimer) { clearTimeout(silaIOSFallbackTimer); silaIOSFallbackTimer = null; }
+  if (typeof silaIOSFallbackCleanup === 'function') {
+    var cleanup = silaIOSFallbackCleanup;
+    silaIOSFallbackCleanup = null;
+    cleanup();
+  }
+}
+
+function armIOSDirectFallback(link) {
+  if (!isIOSDirectLaunchClient() || !link || link.dataset.iosLaunchKind !== 'scheme') return;
+  var fallback = link.dataset.iosFallback || '';
+  if (!fallback) return;
+  clearIOSDirectFallback();
+  var leftSafari = false;
+  function onVisibility() { if (document.hidden) { leftSafari = true; clearIOSDirectFallback(); } }
+  function onPageHide() { leftSafari = true; clearIOSDirectFallback(); }
+  document.addEventListener('visibilitychange', onVisibility);
+  window.addEventListener('pagehide', onPageHide, {once: true});
+  silaIOSFallbackCleanup = function() {
+    document.removeEventListener('visibilitychange', onVisibility);
+    window.removeEventListener('pagehide', onPageHide);
+  };
+  silaIOSFallbackTimer = setTimeout(function() {
+    var shouldFallback = !leftSafari && document.visibilityState === 'visible';
+    clearIOSDirectFallback();
+    if (shouldFallback) window.location.href = fallback;
+  }, 1800);
+}
+
+function bindIOSDirectFallback() {
+  if (!isIOSDirectLaunchClient() || document.documentElement.dataset.silaIOSDirectBound === '1') return;
+  document.documentElement.dataset.silaIOSDirectBound = '1';
+  document.addEventListener('click', function(event) {
+    var target = event.target;
+    var link = target && typeof target.closest === 'function' ? target.closest('.open-action[data-ios-direct="1"]') : null;
+    if (!link) return;
+    armIOSDirectFallback(link);
+  }, true);
+}
+
+function applyIOSDirectWalletActions() {
+  if (!isIOSDirectLaunchClient()) return;
+  bindIOSDirectFallback();
+  var cards = document.querySelectorAll('.wallet.wallet-two-step');
+  for (var i = 0; i < cards.length; i++) {
+    var card = cards[i];
+    if (card.dataset.iosDirectReady === '1') continue;
+    var open = card.querySelector('.open-action[href]');
+    if (!open) continue;
+    var key = normalizeWalletKey(open.dataset.key || card.dataset.walletKey || card.dataset.key);
+    var launch = silaIOSWalletLaunch(key);
+    if (!launch) continue;
+    var original = open.getAttribute('href') || '';
+    if (original.indexOf('/api/pay/l/') === 0) open.dataset.secureLaunchHref = original;
+    open.setAttribute('href', launch.target);
+    open.dataset.iosDirect = '1';
+    open.dataset.iosLaunchKind = launch.kind;
+    open.dataset.iosFallback = launch.store || '';
+    card.dataset.iosDirectReady = '1';
+  }
+}
+
+function applyWalletCompatibilityGrouping() {
+  applyAndroidSingleWalletActions();
+  applyIOSDirectWalletActions();
+  var primary = document.getElementById('wallets');
+  if (!primary) return;
+  primary.hidden = false;
+  sortWalletCards();
+  if (typeof silaSortWalletCardsByLaunchHealth === 'function') silaSortWalletCardsByLaunchHealth(primary);
+}
+
+function legacyCopy(v) {
+  var t = document.createElement('textarea');
+  t.value = v;
+  t.setAttribute('readonly', '');
+  t.style.position = 'fixed';
+  t.style.opacity = '0';
+  t.style.pointerEvents = 'none';
+  t.style.left = '-9999px';
+  document.body.appendChild(t);
+  t.focus();
+  t.select();
+  var ok = false;
+  try { ok = document.execCommand('copy'); } catch (e) {}
+  document.body.removeChild(t);
+  return ok;
+}
+
+function copyForLaunch(v) {
+  var copied = legacyCopy(v);
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      var p = navigator.clipboard.writeText(v);
+      if (p && p.catch) p.catch(function() {});
+      copied = true;
+    }
+  } catch (e) {}
+  return copied;
+}
+
+function notice(m) {
+  var n = document.getElementById('notice');
+  var t = document.getElementById('notice-text');
+  if (t) t.textContent = m; else n.textContent = m;
+  n.classList.add('show');
+  clearTimeout(n._timer);
+  n._timer = setTimeout(function() { n.classList.remove('show'); }, 2400);
+}
+
+function copyWalletAccount(button) {
+  if (button.dataset.busy === '1') return false;
+  button.dataset.busy = '1';
+  var account = button.dataset.account || '', name = button.dataset.name || 'المحفظة', key = button.dataset.key || '';
+  var copied = copyForLaunch(account);
+  track('wallet_selected', key);
+  if (copied) {
+    track('account_copied', key);
+    button.classList.add('copied');
+    button.textContent = 'تم النسخ ✓';
+    notice('تم نسخ رقم التاجر (' + account + ') بنجاح');
+  } else {
+    notice('تعذر النسخ التلقائي — اضغط مطولاً على الرقم لنسخه');
+  }
+  setTimeout(function() { button.dataset.busy = '0'; }, 350);
+  return false;
+}
+
+function openOfficialWallet(link) {
+  if (link.dataset.busy === '1') return false;
+  link.dataset.busy = '1';
+  var name = link.dataset.name || 'المحفظة', key = link.dataset.key || '';
+  if (link.dataset.preferenceRecorded !== '1') {
+    rememberWalletChoice(key);
+    link.dataset.preferenceRecorded = '1';
+  }
+  track('wallet_open_requested', key);
+  try { if (navigator.vibrate) navigator.vibrate(20); } catch (e) {}
+  notice('جارٍ طلب فتح ' + name);
+  setTimeout(function() { link.dataset.busy = '0'; }, 1200);
+  return true;
+}
+
+function openWallet(link) {
+  if (link.dataset.busy === '1') return false;
+  link.dataset.busy = '1';
+  var account = link.dataset.account || '', name = link.dataset.name || 'المحفظة', key = link.dataset.key || '';
+  var copied = false;
+  if (account) copied = copyForLaunch(account);
+  rememberWalletChoice(key);
+  track('wallet_selected', key);
+  if (copied) track('account_copied', key);
+  try { if (navigator.vibrate) navigator.vibrate(20); } catch (e) {}
+  if (copied) {
+    notice('تم نسخ رقم التاجر (' + account + ') — جارٍ فتح ' + name);
+  } else {
+    notice('جارٍ توجيهك إلى ' + name);
+  }
+  setTimeout(function() { link.dataset.busy = '0'; }, 1200);
+  return true;
+}
+
+sortWalletCards();
+applyWalletCompatibilityGrouping();
+addEventListener('pageshow', function() { applyWalletCompatibilityGrouping(); });
+addEventListener('load', function() {
+  track('page_view', '');
+  if (location.hash === '#manual') notice('تم نسخ الرقم. افتح المحفظة يدوياً والصقه داخل التطبيق');
+});
+</script>
 </body>
 </html>
